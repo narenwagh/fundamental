@@ -6,7 +6,8 @@
   "scripts": {
     "build": "gulp build:dist",
     "start": "gulp",
-    "test": "node test/app.js"
+    "test": "node test/app.js",
+    "e2e": "gulp dev-e2e"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,8 @@
   "homepage": "",
   "devDependencies": {
     "browser-sync": "^2.24.7",
+    "chai": "^4.1.2",
+    "cucumber": "^5.0.1",
     "del": "^2.2.2",
     "express": "^4.16.3",
     "gh-pages": "^1.2.0",
@@ -27,6 +30,7 @@
     "gulp-consolidate": "^0.2.0",
     "gulp-contains": "^1.1.0",
     "gulp-cssnano": "^2.1.2",
+    "gulp-cucumber": "0.0.23",
     "gulp-data": "^1.2.1",
     "gulp-debug": "^3.1.0",
     "gulp-eslint": "^3.0.1",
@@ -54,6 +58,7 @@
     "node-sass": "^4.9.2",
     "nunjucks": "^3.0.1",
     "path": "^0.12.7",
+    "puppeteer": "1.9.0",
     "require-dir": "^0.3.1",
     "sass": "^1.0.0-beta.1",
     "yargs": "^7.0.2"
