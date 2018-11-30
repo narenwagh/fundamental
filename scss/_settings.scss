@@ -85,55 +85,57 @@ $fd-weights: map-merge((
 
 //COLORS — updated Oct.8.18
 
+@import '../node_modules/fiori-fundamentals-colors/dist/colors.scss';
+
 $fd-colors: () !default;
 $fd-colors: map-merge((
   "action": (
-    1: hsl(210, 91%, 43%), // #0A6ED1 branded action
-    2: hsl(210, 0%, 100%) // #FFFFFF inverse action
+    1: $action-1,
+    2: $action-2
   ),
   "text": (
-    1: hsl(210, 7.5%, 21%), // #32363A default text
-    2: hsl(210, 5%, 33.5%), // #515559
-    3: hsl(210, 2.8%, 42.7%), // #6a6d70
-    4: hsl(210, 2.6%, 46.8%), //#74777A
-    5: hsl(210, 0%, 100%) // #ffffff inverse text
+    1: $text-1,
+    2: $text-2,
+    3: $text-3,
+    4: $text-4,
+    5: $text-5
   ),
   "background": (
-    1: hsl(210, 9%, 93.5%), // #EDEFF0 body background
-    2: hsl(210, 0%, 100%)  // #FFFFFF content background
+    1: $background-1,
+    2: $background-2
   ),
   "neutral": (
-    1: hsl(210, 3%, 98%), // #FAFAFA
-    2: hsl(210, 3%, 93.5%), // #EEEEEF
-    3: hsl(0, 0%, 85%), // #D9D9D9
-    4: hsl(212, 8%, 57%) // #89919A
+    1: $neutral-1,
+    2: $neutral-2,
+    3: $neutral-3,
+    4: $neutral-4
   ),
   "status": (
-    1: hsl(145, 78%, 28%), // #107F3E positive
-    2: hsl(28, 90%, 48%), // #E9730C alert
-    3: hsl(0, 100%, 37%), // #BB0000 negative
-    4: hsl(191, 5%, 45%), // #6D7678 neutral
+    1: $status-1,
+    2: $status-2,
+    3: $status-3,
+    4: $status-4
   ),
   "accent": (
-    1: hsl(34, 82%, 49%), // #E38B16
-    2: hsl(0, 60%, 66%), // #DC7474
-    3: hsl(332, 75%, 49%), // #DB1F77
-    4: hsl(315, 54%, 49%), // #C0399F
-    5: hsl(238, 65%, 63%), // #6367DE
-    6: hsl(210, 64%, 60%), // #5899DA
-    7: hsl(186, 81%, 39%), // #13A4B4
-    8: hsl(75, 86%, 34%), // #7CA10C
-    9: hsl(269, 54%, 59%), // #955ECF
-    10: hsl(197, 15%, 50%), // #6C8893
-    11: hsl(34, 82%, 45%), // #D17F15
-    12: hsl(0, 60%, 54%), // #D04343
-    13: hsl(210, 64%, 47%), // #2B78C5
-    14: hsl(186, 81%, 31%), // #0F828F
-    15: hsl(206, 15%, 46%), // #647887
+    1: $accent-1,
+    2: $accent-2,
+    3: $accent-3,
+    4: $accent-4,
+    5: $accent-5,
+    6: $accent-6,
+    7: $accent-7,
+    8: $accent-8,
+    9: $accent-9,
+    10: $accent-10,
+    11: $accent-11,
+    12: $accent-12,
+    13: $accent-13,
+    14: $accent-14,
+    15: $accent-15
   ),
   "shell": (
-    1: hsl(210, 28.4%, 29%), // #354A5F background
-    2: hsl(210, 100%, 91%) // #D1E8FF icons
+    1: $shell-1,
+    2: $shell-2
   )
 ), $fd-colors);
 //set group lists for easier access (used in _root)
