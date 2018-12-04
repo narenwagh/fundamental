@@ -1,0 +1,44 @@
+{% import "../forms.njk" as forms %}
+{% from "../button/component.njk" import button %}
+{% from "../icon/component.njk" import icon %}
+<!--
+dailog:
+    properties={},
+-->
+{% macro dailog(properties={}) %}
+<div class="fd-dailog" role="dialog">
+  <div class="fd-dailog__content" role="document">
+      <header class="fd-dailog__header">
+          <h1 class="fd-dailog__title">{{properties.header}}</h1>
+          {{  button(
+                  {
+                      label: item.label
+                  },
+                  modifier={
+                      block: ['light']
+                  },
+                  classes=['dailog__close'])
+          }}
+      </header>
+      <div class="fd-dailog__body">
+            <p>{{properties.body}}</p>
+      </div>
+      <footer class="fd-dailog__footer">
+        <div class="fd-dailog__actions">
+          {%- for item in properties.actions %}
+          {{  button(
+                  {
+                      label: item.label
+                  },
+                  modifier={
+                      block: [item.type]
+                  })
+          }}
+          {%- endfor %}
+        </div>
+        </footer>
+  </div>
+
+</div>
+
+{%- endmacro %}
