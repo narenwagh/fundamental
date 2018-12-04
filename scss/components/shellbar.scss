@@ -226,7 +226,7 @@ $block: #{$fd-namespace}-shellbar;
             background-color: transparent;
         }
         & .fd-input-group__addon--button [class*="fd-button"] {
-            border-left: 0;
+            border-left-width: 0;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
             background-color: transparent;
@@ -253,6 +253,7 @@ $block: #{$fd-namespace}-shellbar;
                 background-color: transparent;
             }
             & .fd-input-group__addon--button [class*="fd-button"] {
+                border-left-width: 1px;
                 border-color: transparent;
                 border-radius: $fd-border-radius;
             }
