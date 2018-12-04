@@ -37,7 +37,6 @@ $fd-search-closed-control-transition: all $fd-animation--speed !default;
       @include fd-var-size("min-width", $fd-forms-height, --fd-forms-height);
     }
     & .fd-input-group--after input[type=text] {
-      // border-radius: $fd-border-radius;
       position: absolute;
       top: 0;
       right: 100%;
@@ -47,10 +46,6 @@ $fd-search-closed-control-transition: all $fd-animation--speed !default;
     & .fd-input-group__addon--after,
     & .fd-input-group__addon:last-child {
       background: fd-color("background", 2);
-      // position: absolute;
-      // top: 0;
-      // right: 0;
-      // z-index: map-get($fd-z-index-levels, "second");
     }
     & .fd-input-group__addon--button [class*="fd-button"] {
       border-radius: $fd-border-radius;
