@@ -28,6 +28,7 @@
           "id": "",
           "value": "Sear",
           "placeholder": "Search products",
+          "collapsable": true,
           "collapsed": false,
           "items": [
             {

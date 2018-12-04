@@ -24,7 +24,7 @@ $block: #{$fd-namespace}-input-group;
     }
 
     @include fd-rtl {
-        > * { 
+        > * {
             & input:read-only {
               border-right: none;
             }
@@ -44,7 +44,7 @@ $block: #{$fd-namespace}-input-group;
                   border-top-right-radius: $fd-border-radius;
                   border-bottom-right-radius: $fd-border-radius;
                   border-right: 1px $fd-forms-border-color solid;
-                }            
+                }
         }
     }
 
@@ -105,14 +105,12 @@ $block: #{$fd-namespace}-input-group;
         flex-direction: column;
         border-radius: $fd-border-radius;
         height: var(--fd-forms-height);
+
         &--readonly{
             border: none;
             border-top-color: transparent;
             border-right-color: transparent;
             border-radius: 0;
-
-            button{
-            }
         }
         @at-root {
           .#{$block}--compact & {

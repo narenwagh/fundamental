@@ -10,8 +10,9 @@
 search_input:
   properties={
     "value": "Sear",
-    "placeholder": "Search products"
-    "closed": false,
+    "placeholder": "Search products",
+    "collapsable": false,
+    "collapsed": false,
     "items": [
       {
         "label": "<strong>Sear</strong>ch Result A",
@@ -39,96 +40,63 @@ search_input:
 
 {% macro search_input(
     properties={},
+    modifier={},
     state={},
-    aria={},
-    classes=[],
-    size="")
+    aria={})
 -%}
+  {%- set _id = utils.id() %}
+  {%- set _inputid = utils.id() %}
 
-{%- set _id = utils.id() %}
+  <div class="fd-search-input{{ classes|classes }} {%- if properties.collapsed == true %} is-collapsed{%- endif %} {%- if properties.collapsable == true %} fd-search-input--collapsable{%- endif %} {{ modifier.block | modifier('search-input') }}">
 
-<div class="fd-search-input{{ classes|classes }} {%- if properties.closed == true %} fd-search-input--closed{%- endif %}">
-    <div class="fd-popover">
-        <div class="fd-popover__control fd-search-input__control">
-          {% if properties.closed %}
-            {{ search_input_closed_control(properties={
-                "id": _id,
-                "value": properties.value,
-                "placeholder": properties.placeholder
-              })
-            }}
-          {% else %}
-            {{ search_input_control(properties={
-                "id": _id,
-                "value": properties.value,
-                "placeholder": properties.placeholder
-              })
-            }}
-          {% endif %}
-        </div>
-        <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="{{_id}}">
-            {{ search_input_body(properties={ "items": properties.items }) }}
-        </div>
-    </div>
-</div>
+      <div class="fd-popover">
+
+          <div class="fd-popover__control">
+
+              {%- if properties.collapsable == true %}
+
+                <div class="fd-search-input__control">
+                  <div class="fd-input-group fd-input-group--after">
+                    <input type="text" class="fd-input" id="{{ _inputid }}" placeholder="{{ properties.placeholder }}" value="{{ properties.value }}" aria-controls="{{ _id }}" aria-expanded="false" aria-haspopup="true">
+
+                    <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button ">
+                      <button class=" fd-button--light sap-icon--search"></button>
+                    </span>
+                  </div>
+                </div>
+
+              {% else %}
+
+                <div class="fd-search-input__control" aria-controls="{{ _id }}" aria-expanded="false" aria-haspopup="true">
+                  <div class="fd-input-group fd-input-group--after">
+                    <input type="text" class="fd-input" id="{{ _inputid }}" placeholder="{{ properties.placeholder }}" value="{{ properties.value }}">
+
+                    <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button ">
+                      <button class=" fd-button--light sap-icon--search"></button>
+                    </span>
+                  </div>
+                </div>
+
+              {%- endif %}
+
+          </div>
+
+          <div class="fd-popover__body fd-search-input__body fd-popover__body--no-arrow" aria-hidden="true" id="{{_id}}">
+              {{ search_input_body(properties={ "items": properties.items }) }}
+          </div>
+      </div>
+
+  </div>
 {%- endmacro %}
 
-{%- macro search_input_closed_control(properties={}, modifier={}, state={}) -%}
-  {%- set interactionId = utils.id() %}
-
-  <button class="sap-icon--search fd-button--shell" aria-controls="{{ interactionId }}" aria-expanded="false" aria-haspopup="true"></button>
-
-  <div class="fd-search-input__closedcontrol" id="{{interactionId}}" aria-hidden="true">
-    <div class="fd-search-input__controlinput" aria-controls="{{ properties.id }}" aria-expanded="false" aria-haspopup="true">
-      {{ forms.text(
-          type="text",
-          properties={
-            "id": utils.id(),
-            "value": properties.value,
-            "placeholder": properties.placeholder
-          })
-      }}
-    </div>
-  </div>
-{%- endmacro -%}
-
-
-{%- macro search_input_control(properties={}, modifier={}, state={}) -%}
-<div class="fd-search-input__control" aria-controls="{{ properties.id }}" aria-expanded="false" aria-haspopup="true">
-  {{- input_group(
-      modifier={
-          block: "after",
-          after: ['after', 'button']
-      },
-      properties={
-          input: {
-              properties: {
-                "id": utils.id(),
-                "value": properties.value,
-                "placeholder": properties.placeholder
-              }
-          },
-          after: button(
-            { label: '',
-              icon: 'search'
-            },
-            modifier={
-              block: ['light']
-            }, size=size
-          )
-      },size=size)
-  }}
-</div>
-{%- endmacro -%}
-
 {%- macro search_input_body(properties={}, modifier={}, state={}) -%}
-<div class="fd-search-input__body">
-    <nav class="fd-menu">
-        <ul class="fd-menu__list">
-            {% for item in properties.items %}
-              <li><a href="{{ item.action }}" class="fd-menu__item">{{ item.label }}</a></li>
-            {% endfor %}
-        </ul>
-    </nav>
-</div>
+
+  <nav class="fd-menu">
+      <ul class="fd-menu__list">
+          {% for item in properties.items %}
+            <li><a href="{{ item.action }}" class="fd-menu__item">{{ item.label }}</a></li>
+          {% endfor %}
+      </ul>
+  </nav>
+
 {%- endmacro -%}

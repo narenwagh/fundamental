@@ -4,7 +4,8 @@
     "properties": {
       "value": "Sear",
       "placeholder": "Search products",
-      "closed": false,
+      "collapsable": false,
+      "collapsed": false,
       "items": [
         {
           "label": "<strong>Sear</strong>ch Result A",

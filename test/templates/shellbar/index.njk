@@ -10,10 +10,11 @@
 
 {% set css_deps = ['icons', 'components/button', 'components/dropdown', 'components/nav', 'components/identifier', 'components/popover', 'components/menu', 'components/product-switcher', 'components/search-input', 'components/counter', 'components/user-menu', 'components/product-menu', 'helpers'] %}
 
-{% set search = search_input(properties={
+{% set default_search_input_props = search_input(properties={
     "id": utils.id(),
     "value": data.properties.search.value,
     "placeholder": data.properties.search.placeholder,
+    "collapsable": data.properties.search.collapsable,
     "collapsed": data.properties.search.collapsed,
     "items": data.properties.search.items
   })

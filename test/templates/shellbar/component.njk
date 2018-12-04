@@ -38,6 +38,7 @@ shellbar:
     "id": utils.id(),
     "value": properties.search.value,
     "placeholder": properties.search.placeholder,
+    "collapsable": properties.search.collapsable,
     "collapsed": properties.search.collapsed,
     "items": properties.search.items
   })
@@ -114,7 +115,8 @@ shellbar:
   "id": utils.id(),
   "value": "Sear",
   "placeholder": "Search products",
-  "closed": true,
+  "collapsable": true,
+  "collapsed": true,
   "items": [
     {
       "label": "<strong>Sear</strong>ch Result A",
@@ -171,8 +173,8 @@ shellbar:
     {% endif %}
     {% if actions or user or switcher or search %}
       <div class="fd-shellbar__group fd-shellbar__group--end">
-      {{ shell_actions(actions=actions, user=user, switcher=switcher, search=search,  properties=properties) }}
-    </div>
+        {{ shell_actions(actions=actions, user=user, switcher=switcher, search=search,  properties=properties) }}
+      </div>
     {% endif %}
   </div>
 {%- endmacro %}

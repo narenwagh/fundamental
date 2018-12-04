@@ -162,6 +162,7 @@ $block: #{$fd-namespace}-shellbar;
         position: relative;
         padding-right: 0;
         padding-left: $fd-shellbar-item-spacing;
+
         @include fd-rtl {
           padding-right: $fd-shellbar-item-spacing;
           padding-left: 0;
@@ -207,14 +208,48 @@ $block: #{$fd-namespace}-shellbar;
     }
 
     .#{$fd-namespace}-search-input {
-        .fd-input {
-            border-style: solid;
-            border-width: 1px;
-            @include fd-var-color("border-color", fd-color("shell", 2), --fd-color-shell-2);
-            @include fd-var-color("background-color", fd-color("shell", 1), --fd-color-shell-1);
-            @include fd-var-color("color", fd-color("shell",2), --fd-color-shell-2);
+        .fd-input-group--after input[type=text] {
+            // @include fd-var-color("border-color", fd-color("shell", 2), --fd-color-shell-2);
+            // @include fd-var-color("background-color", fd-color("shell", 1), --fd-color-shell-1);
+            // @include fd-var-color("color", fd-color("shell",2), --fd-color-shell-2);
+            border: 1px solid var(--fd-color-shell-2);
+            background-color: var(--fd-color-shell-1);
+            color: var(--fd-color-shell-2);
+
             &:focus {
               box-shadow: none;
+            }
+        }
+        & .fd-input-group__addon--after,
+        & .fd-input-group__addon:last-child {
+            border: transparent;
+            background-color: transparent;
+        }
+        & .fd-input-group__addon--button [class*="fd-button"] {
+            --fd-button-background-color: transparent;
+            --fd-button-color: var(--fd-color-shell-2);
+            @include fd-var-color("background-color", transparent);
+            @include fd-var-color("color", fd-color("shell", 2));
+
+            @include fd-hover {
+                --fd-button-background-color: hsl(217, 21%, 25%);
+                @include fd-var-color("background-color", hsl(217, 21%, 25%));
+            }
+
+            @include fd-selected {
+                --fd-button-color: var(--fd-color-shell-2);
+                @include fd-var-color("color", fd-color("shell", 2));
+            }
+
+            &:focus {
+              box-shadow: none;
+            }
+        }
+        &.is-collapsed {
+            & .fd-input-group__addon--after,
+            & .fd-input-group__addon:last-child {
+                border: transparent;
+                background-color: transparent;
             }
         }
     }
