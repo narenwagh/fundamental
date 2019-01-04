@@ -22,23 +22,22 @@ $block: #{$fd-namespace}-inline-help;
     @include fd-reset;
     position: relative;
     display: inline-block;
-    width: $fd-tooltip-icon-size;
-    height: $fd-tooltip-icon-size;
-    top: 3px;
+    // width: $fd-tooltip-icon-size;
+    // height: $fd-tooltip-icon-size;
+    // top: 3px;
 
-
-    &::before {
-        content: "?";
-        width: $fd-tooltip-icon-size;
-        height: $fd-tooltip-icon-size;
-        font-style: normal;
-        position: absolute;
-        left: 0;
-        color: fd-color("text", 5);
-        border-radius: 50%;
-        background-color: fd-color(text, 3);
-        text-align: center;
-    }
+    // &::before {
+    //     content: "?";
+    //     width: $fd-tooltip-icon-size;
+    //     height: $fd-tooltip-icon-size;
+    //     font-style: normal;
+    //     position: absolute;
+    //     left: 0;
+    //     color: fd-color("text", 5);
+    //     border-radius: 50%;
+    //     background-color: fd-color(text, 3);
+    //     text-align: center;
+    // }
 
     //ELEMENTS *******************************************
     &__content {
@@ -48,8 +47,8 @@ $block: #{$fd-namespace}-inline-help;
         display: block;
         position: absolute;
         color: $fd-tooltip-content-color;
-        top: $fd-tooltip-padding * 2.5;
-        right: -$fd-tooltip-padding;
+        top: calc(100% + 5px);
+        left: calc(40% - 5px);
         min-width: $fd-tooltip-min-width;
         transition: opacity $fd-tooltip-transition-params;
         text-align: left;
@@ -65,14 +64,14 @@ $block: #{$fd-namespace}-inline-help;
             content: "";
             position: absolute;
             top: -($fd-tooltip-arrow-offset);
-            right: $fd-tooltip-arrow-offset * 1.25;
+            left: $fd-tooltip-arrow-offset * 1.25;
         }
         &::after {
             @include triangle(13px 8px, fd-color('background', 2), up);
             content: "";
             position: absolute;
             top: -($fd-tooltip-arrow-offset - 2);
-            right: $fd-tooltip-arrow-offset * 1.25;
+            left: $fd-tooltip-arrow-offset * 1.25;
         }
         &--right{
             top: -$fd-tooltip-padding;

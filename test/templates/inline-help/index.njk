@@ -5,7 +5,7 @@
 {% import "./../utils.njk" as utils %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = ['components/button', 'components/form'] %}
+{% set css_deps = ['components/button', 'components/badge', 'components/form', 'icons'] %}
 
 {% block content %}
 
@@ -17,9 +17,33 @@
     {% set example %}
     {%- set _id = utils.id() %}
 
+    {{  inline_help(
+            properties={
+                control:"<button type='button' name='button' class='fd-button'>help on button</button>",
+                content: "Lorem ipsum dolor sit amet, consectetur adipiscing."
+            },
+            modifier={
+                content: [""]
+            }
+        )
+    }}
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    {{  inline_help(
+            properties={
+                control:"<span class='fd-badge fd-badge--success'>Help on badge</span>",
+                content: "Lorem ipsum dolor sit amet, consectetur adipiscing."
+            },
+            modifier={
+                content: [""]
+            }
+        )
+    }}
+    <br><br>
+
     Bottom Right (Default)
     {{  inline_help(
             properties={
+                control:"<button type='button' name='button' class='fd-button'>test </button>",
                 content: "Lorem ipsum dolor sit amet, consectetur adipiscing."
             },
             modifier={
