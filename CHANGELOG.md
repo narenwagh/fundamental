@@ -2,6 +2,91 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.2"></a>
+## [1.5.2](https://github.com/SAP/fundamental/compare/v1.5.2-rc.1...v1.5.2) (2019-04-08)
+
+
+
+<a name="1.5.2-rc.1"></a>
+## [1.5.2-rc.1](https://github.com/SAP/fundamental/compare/v1.5.2-rc.0...v1.5.2-rc.1) (2019-04-08)
+
+
+
+<a name="1.5.2-rc.0"></a>
+## [1.5.2-rc.0](https://github.com/SAP/fundamental/compare/v1.5.1...v1.5.2-rc.0) (2019-04-07)
+
+
+
+<a name="1.5.1"></a>
+## [1.5.1](https://github.com/SAP/fundamental/compare/v1.5.1-rc.0...v1.5.1) (2019-04-04)
+
+
+
+<a name="1.5.1-rc.0"></a>
+## [1.5.1-rc.0](https://github.com/SAP/fundamental/compare/v1.5.0...v1.5.1-rc.0) (2019-04-04)
+
+
+### Bug Fixes
+
+* docs site works out of the box ([#1372](https://github.com/SAP/fundamental/issues/1372)) ([404074e](https://github.com/SAP/fundamental/commit/404074e))
+
+
+
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/SAP/fundamental/compare/v1.5.0-rc.4...v1.5.0) (2019-04-04)
+
+
+
+<a name="1.5.0-rc.4"></a>
+# [1.5.0-rc.4](https://github.com/SAP/fundamental/compare/v1.5.0-rc.3...v1.5.0-rc.4) (2019-04-04)
+
+
+### Bug Fixes
+
+* Bumped the popover z-index ([#1374](https://github.com/SAP/fundamental/issues/1374)) ([9ca0f13](https://github.com/SAP/fundamental/commit/9ca0f13))
+
+
+
+<a name="1.5.0-rc.3"></a>
+# [1.5.0-rc.3](https://github.com/SAP/fundamental/compare/v1.5.0-rc.2...v1.5.0-rc.3) (2019-04-04)
+
+
+### Bug Fixes
+
+* default header changed for components ([#1367](https://github.com/SAP/fundamental/issues/1367)) ([9e7b8d5](https://github.com/SAP/fundamental/commit/9e7b8d5))
+
+
+
+<a name="1.5.0-rc.2"></a>
+# [1.5.0-rc.2](https://github.com/SAP/fundamental/compare/v1.5.0-rc.1...v1.5.0-rc.2) (2019-04-04)
+
+
+
+<a name="1.5.0-rc.1"></a>
+# [1.5.0-rc.1](https://github.com/SAP/fundamental/compare/v1.5.0-rc.0...v1.5.0-rc.1) (2019-04-04)
+
+
+### Bug Fixes
+
+* Small refactor for TimePicker using popper ([#1373](https://github.com/SAP/fundamental/issues/1373)) ([93b3152](https://github.com/SAP/fundamental/commit/93b3152))
+
+
+
+<a name="1.5.0-rc.0"></a>
+# [1.5.0-rc.0](https://github.com/SAP/fundamental/compare/v1.4.10-rc.1...v1.5.0-rc.0) (2019-04-04)
+
+
+### Features
+
+* Popover popper styles ([#1366](https://github.com/SAP/fundamental/issues/1366)) ([c756cc4](https://github.com/SAP/fundamental/commit/c756cc4))
+
+
+
+<a name="1.4.10-rc.1"></a>
+## [1.4.10-rc.1](https://github.com/SAP/fundamental/compare/v1.4.10-rc.0...v1.4.10-rc.1) (2019-04-03)
+
+
+
 <a name="1.4.10-rc.0"></a>
 ## [1.4.10-rc.0](https://github.com/SAP/fundamental/compare/v1.4.9...v1.4.10-rc.0) (2019-03-31)
 
