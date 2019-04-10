@@ -4,7 +4,7 @@
   "description": "Fiori Fundamentals is a Design System and HTML/CSS Component Library used to build modern Product User Experiences with the SAP look and feel. Learn more about this project at - http://sap.github.io/fundamental/",
   "main": "index.js",
   "scripts": {
-    "build:dist2": "npm run style:remove && npm run style:sass && npm run style:rename && npm run style:cleanCSS && npm run style:postCSS && npm run style:minify && npm run style:assets",
+    "build:dist2": "npm run style:remove && npm run style:sass && npm run style:rename && npm run style:postCSS && npm run style:minify && npm run style:assets",
     "build:dist2:prod": "npm run build:dist2 && npm run style:less",
     "build:dist": "npx gulp build:dist",
     "build:dist:prod": "npm run build:dist -- --production",
@@ -27,9 +27,8 @@
     "style:component": "node-sass --output-style expanded --precision 5 scss/components.scss --output dist2/",
     "style:sass": "node-sass --output-style expanded --precision 5 scss/ --output dist2/",
     "style:rename": "mv dist2/all.css dist2/fiori-fundamentals.css && mv dist2/all-ie11.css dist2/fiori-fundamentals-ie11.css && rm dist2/fundamentals-ie11.less.css dist2/fundamentals.less.css",
-    "style:cleanCSS": "foreach -g \"dist2/**/*.css\" -x \"cleancss --format beautify #{path} -o dist2/#{reldir}/#{name}.css\" --no-c",
     "style:postCSS": "postcss --config config/postcss.config.js  --replace dist2/**/*.css && postcss --config config/postcss.config.js  --replace dist2/*.css",
-    "style:minify": "foreach -g \"dist2/**/*.css\" -x \"cleancss -O1 specialComments:1 --format 'afterComment=on' #{path} -o dist2/#{reldir}/#{name}.min.css\" --no-c",
+    "style:minify": "foreach -g \"dist2/*.css\" -x \"cleancss -O1 specialComments:1 --format 'afterComment=on' #{path} -o dist2/#{reldir}/#{name}.min.css\" --no-c && foreach -g \"dist2/components/*.css\" -x \"cleancss -O1 specialComments:1 --format 'afterComment=on' #{path} -o dist2/#{reldir}/#{name}.min.css\" --no-c",
     "style:assets": "mkdir -p dist2/{fonts,images} dist2/fonts/72 && cp scss/icons/**.{eot,svg,ttf,woff} dist2/ && cp scss/fonts/**/*.{eot,svg,ttf,woff,woff2} dist2/fonts/72/ && cp public/images/* dist2/images/",
     "style:less": "npx gulp pkg-less",
     "diff:forEach": "foreach -g \"dist2/**/*.css\" -x \"./scripts/diffCss.js #{path}\" --no-c"
@@ -82,6 +81,7 @@
     "node-sass": "^4.9.4",
     "nunjucks": "^3.1.3",
     "postcss-banner": "^3.0.1",
+    "postcss-clean": "^1.1.0",
     "postcss-cli": "^6.1.2",
     "pre-commit": "^1.2.2",
     "read-file": "^0.2.0",
