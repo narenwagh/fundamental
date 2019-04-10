@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:dist2": "npm run style:remove && npm run style:sass && npm run style:rename && npm run style:cleanCSS && npm run style:postCSS && npm run style:minify && npm run style:assets",
-    "build:dist2:prod": "npm run build && npm run style:less",
+    "build:dist2:prod": "npm run build:dist2 && npm run style:less",
     "build:dist": "npx gulp build:dist",
     "build:dist:prod": "npm run build:dist -- --production",
     "deploy": "gh-pages -d docs/_site",
